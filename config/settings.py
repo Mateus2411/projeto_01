@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^!kxw4huxu3a$eb!#zs8p!n4^l_^dt_i=gvbsq=_51msn$&49^'
+SECRET_KEY = 'django-insecure-o#nqug3#dpjufib4ir8$6vo187n8%tbd-h8_xj#$4aiyjvife8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'Medico',
     'Paciente',
     'Consulta',
-    'Medico',
     'Especialidade',
-    'Receita',
     'Medicamento',
+    'Receita',
     'Receita_Medicamento',
 ]
 
@@ -110,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'pt-br'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

@@ -3,5 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Especialidade(models.Model):
-    id = 1
-    nome = "alguma coisa"
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome

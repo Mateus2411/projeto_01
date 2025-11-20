@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import ReceitaMedicamento
+from .serializers import ReceitaMedicamentoSerializer
 
-# Create your views here.
+class ReceitaMedicamentoViewSet(viewsets.ModelViewSet):
+    queryset = ReceitaMedicamento.objects.all()
+    serializer_class = ReceitaMedicamentoSerializer
