@@ -2,7 +2,7 @@ import os
 import django
 
 # Configurar Django
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
 
 from Receita_Medicamento.models import ReceitaMedicamento
@@ -13,7 +13,13 @@ print("Testando API - medicamentos_disponiveis")
 print("=" * 50)
 
 # Testar com diferentes especialidades
-especialidades = ['Cardiologia', 'Dermatologia', 'Ortopedia', 'Pediatria', 'Ginecologia']
+especialidades = [
+    "Cardiologia",
+    "Dermatologia",
+    "Ortopedia",
+    "Pediatria",
+    "Ginecologia",
+]
 
 for esp in especialidades:
     rm = ReceitaMedicamento.objects.filter(
@@ -22,7 +28,7 @@ for esp in especialidades:
 
     if rm:
         serializer = ReceitaMedicamentoSerializer(rm)
-        meds = serializer.data['medicamentos_disponiveis']
+        meds = serializer.data["medicamentos_disponiveis"]
         print(f"\n{esp}: {len(meds)} medicamentos")
         for med in meds[:3]:  # Mostrar apenas os primeiros 3
             print(f"  - {med['nome']} (ID: {med['id']})")

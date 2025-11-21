@@ -5,20 +5,33 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('Consulta', '0001_initial'),
+        ("Consulta", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Receita',
+            name="Receita",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('data', models.DateTimeField()),
-                ('consulta', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Consulta.consulta')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("data", models.DateTimeField()),
+                (
+                    "consulta",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="Consulta.consulta",
+                    ),
+                ),
             ],
         ),
     ]

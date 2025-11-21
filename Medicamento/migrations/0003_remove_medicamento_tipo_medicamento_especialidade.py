@@ -5,20 +5,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('Especialidade', '0001_initial'),
-        ('Medicamento', '0002_medicamento_tipo'),
+        ("Especialidade", "0001_initial"),
+        ("Medicamento", "0002_medicamento_tipo"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='medicamento',
-            name='tipo',
+            model_name="medicamento",
+            name="tipo",
         ),
         migrations.AddField(
-            model_name='medicamento',
-            name='especialidade',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='Especialidade.especialidade'),
+            model_name="medicamento",
+            name="especialidade",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="Especialidade.especialidade",
+            ),
         ),
     ]

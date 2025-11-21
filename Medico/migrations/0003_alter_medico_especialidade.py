@@ -5,16 +5,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('Especialidade', '0001_initial'),
-        ('Medico', '0002_alter_medico_especialidade'),
+        ("Especialidade", "0001_initial"),
+        ("Medico", "0002_alter_medico_especialidade"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='medico',
-            name='especialidade',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Especialidade.especialidade'),
+            model_name="medico",
+            name="especialidade",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to="Especialidade.especialidade",
+            ),
         ),
     ]

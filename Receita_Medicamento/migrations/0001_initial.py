@@ -5,22 +5,41 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('Medicamento', '0001_initial'),
-        ('Receita', '0001_initial'),
+        ("Medicamento", "0001_initial"),
+        ("Receita", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ReceitaMedicamento',
+            name="ReceitaMedicamento",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('quantidade', models.IntegerField()),
-                ('medicamento', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Medicamento.medicamento')),
-                ('receita', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Receita.receita')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("quantidade", models.IntegerField()),
+                (
+                    "medicamento",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="Medicamento.medicamento",
+                    ),
+                ),
+                (
+                    "receita",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="Receita.receita",
+                    ),
+                ),
             ],
         ),
     ]
